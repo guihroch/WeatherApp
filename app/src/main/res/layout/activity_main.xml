@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_principal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue_300"
+    tools:context=".MainActivity">
+
+    <Switch
+        android:id="@+id/switch_trocar_tema"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/txt_temperatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="21 ºC  "
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_trocar_tema" />
+
+    <TextView
+        android:id="@+id/txt_pais_cidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Brasil - São Paulo"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_temperatura" />
+
+    <ImageView
+        android:id="@+id/img_clima"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_pais_cidade" />
+
+    <ProgressBar
+        android:id="@+id/progress_load_image"
+        android:visibility="visible"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_pais_cidade"
+        android:indeterminateTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <View
+        android:id="@+id/container_informacoes"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_container_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_clima" />
+
+    <TextView
+        android:id="@+id/txt_informacoes_adicionais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Informações Adicionais"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/container_informacoes"
+        app:layout_constraintStart_toStartOf="@id/container_informacoes"
+        app:layout_constraintTop_toTopOf="@id/container_informacoes" />
+
+    <TextView
+        android:id="@+id/txt_info_clima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Clima \n Céu limpo \n \n Umidade \n 48"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/container_informacoes"
+        app:layout_constraintStart_toStartOf="@id/container_informacoes"
+        app:layout_constraintTop_toBottomOf="@id/txt_informacoes_adicionais" />
+
+    <TextView
+        android:id="@+id/txt_info_temperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Temp.Min \n 21 \n \n Temp.Max \n 25"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/container_informacoes"
+        app:layout_constraintEnd_toEndOf="@id/container_informacoes"
+        app:layout_constraintTop_toBottomOf="@id/txt_informacoes_adicionais" />
+
+    <EditText
+        android:id="@+id/edit_buscar_cidade"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="Buscar cidade..."
+        android:layout_marginStart="20dp"
+        android:maxLines="1"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_buscar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_informacoes" />
+
+    <Button
+        android:id="@+id/button_buscar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/dark_blue_600"
+        android:padding="15dp"
+        android:text="Buscar"
+        android:textAllCaps="false"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edit_buscar_cidade"
+        app:layout_constraintTop_toBottomOf="@id/container_informacoes" />
+
+    <ProgressBar
+        android:id="@+id/search_progressbar"
+        android:visibility="invisible"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edit_buscar_cidade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
